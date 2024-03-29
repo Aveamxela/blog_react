@@ -5,7 +5,7 @@ const Post = ({id, title, body}) => {
     <>
       <Card style={{ width: '18rem', height: '9rem' }}>
       <Card.Body key={id}>
-        <Card.Title>{title}</Card.Title>
+        <Card.Title>Post {id} : {title}</Card.Title>
         <Card.Text>{body}</Card.Text>
       </Card.Body>
     </Card>
