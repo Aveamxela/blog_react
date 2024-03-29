@@ -19,7 +19,7 @@ export const router = createBrowserRouter([
                 element: <BlogPost />,
             },
             {
-                path: "/post/:id/edit",
+                path: "/post",
                 element: <EditBlogPost />,
             },
             {
