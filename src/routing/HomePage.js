@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import Button from "react-bootstrap/Button";
+
 function HomePage() {
   useEffect(() => {
     // @TODO - fetching post blogs from the server...
@@ -8,10 +10,11 @@ function HomePage() {
   // pay attention on how to use carefully useEffect, don't hesitate to log !
 
   return (
-    <>
-      <h1>Blog posts</h1>
-      <p>...</p>
-    </>
+      <>
+          <h1>Blog posts</h1>
+          <p>...</p>
+          <Button>est composantreact bootstrap</Button>
+      </>
   );
 }
 

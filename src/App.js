@@ -1,14 +1,9 @@
-import Button from "react-bootstrap/Button";
+import {RouteProvider} from 'react-router-dom';
+import {router} from './routing/routes'
 
 function App() {
-    return (
-        <>
-            <h1>App</h1> 
-            <Button>
-              Test composantreact bootstrap
-            </Button>
-        </>
-    );
+  <RouteProvider router={router}></RouteProvider>
+    
 }
 
 export default App;
