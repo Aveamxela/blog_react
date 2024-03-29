@@ -1,19 +1,13 @@
-const BlogPost = ({testsPosts}) => {
+// import { useParams } from "react-router-dom";
+
+const BlogPost = () => {
+  // const {id} = useParams()
+  // console.log({id})
   return (
-    <>
-      <h1>Test</h1>
-      {/* {testsPosts.map((post, index) => {
-        return (
-          <div key={index}>
-            <p>{post.id}</p>
-            <p>{post.title}</p>
-            <p>{post.body}</p>
-          </div>
-        )
-      })}
-      {console.log(testsPosts)} */}
-    </>
-  )
+      <>
+          {/* <h1>Test blog post{id}</h1> */}
+      </>
+  );
 }
 
 export default BlogPost;
