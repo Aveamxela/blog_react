@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-
 function HomePage() {
   useEffect(() => {
     // @TODO - fetching post blogs from the server...
