@@ -1,7 +1,8 @@
-import { useParams } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const DeleteBlogPost = () => {
+const BlogDetails = () => {
   const [postInfo, setPostInfo] = useState({});
   const {id} = useParams();
 
@@ -27,11 +28,23 @@ const DeleteBlogPost = () => {
       console.log("Error :", error);
     }}
 
-    FetchPostId(id, "DELETE");
+    FetchPostId(id, "GET");
   }, []);
 
-  console.log(postInfo)
-  return (<h1>Delete post {id} </h1>)
+  console.log(postInfo);
+
+  return (
+    <>
+        <h1> Post {id} </h1>
+        <li key={postInfo.id}>
+          <p>{postInfo.title}</p>
+          <p>{postInfo.body}</p>
+          <Link to={`/post/${id}/edit`}>Edit</Link>
+          <Link to={`/post/${id}/delete`}>Delete</Link>
+        </li>
+    </>
+  );
 }
 
-export default DeleteBlogPost;
+
+export default BlogDetails;

@@ -1,12 +1,10 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "../components/HomePage";
-import BlogPost from "../components/BlogPost"
+// import BlogPost from "../components/BlogPost"
 import EditBlogPost from "../components/EditBlogPost";
 import DeleteBlogPost from "../components/DeleteBlogPost";
 import Layout from "../components/Layout";
-
-const postsSaved = JSON.parse(localStorage.getItem('PostInfosTest'));
-const posts = postsSaved.slice(0, 100);
+import BlogDetails from "../components/BlogDetail";
 
 
 export const router = createBrowserRouter([
@@ -16,14 +14,14 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <HomePage savedPosts={posts} />,
+                element: <HomePage />,
             },
             {
                 path: "/post/:id",
-                element: <BlogPost savedPosts={posts} />,
+                element: <BlogDetails />,
             },
             {
-                path: "/post/:id/edit",
+                path: "post/:id/edit",
                 element: <EditBlogPost />,
             },
             {
