@@ -14,7 +14,7 @@ const BlogPost = () => {
     }, [id]);
 
 
-    function delete() {
+    function deletePost() {
       FetchPostId(id, "DELETE").then((post) => {
           setPost(post);
       });
@@ -23,7 +23,7 @@ const BlogPost = () => {
     const handleClick = (e) => {
       const confirmDelete = window.confirm(`You're about to delete post ${post.id}. Are you sure ?`);
       if (confirmDelete) {
-        delete();
+        deletePost();
         console.log('Post deleted');
       }
     };
@@ -57,6 +57,7 @@ const handleChange = (name, value) => {
             <h2>{post.title}</h2>
             <p>{post.body}</p>
             <button>Edit</button>
+            {/* Afficher EditBlogPost si button cliqué */}
             <EditBlogPost
                 onSubmit={handleSubmit}
                 // Revoir onEdit
