@@ -1,7 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "../Pages/HomePage";
 import BlogPost from "../Pages/BlogPost"
-import EditBlogPost from "../Pages/EditBlogPost";
 import DeleteBlogPost from "../Pages/DeleteBlogPost";
 import Layout from "../components/Layout";
 
@@ -17,11 +16,6 @@ export const router = createBrowserRouter([
             {
                 path: "/post/:id",
                 element: <BlogPost />,
-            },
-            {
-                path: "post/:id/edit",
-                // path: "/post",
-                element: <EditBlogPost />,
             },
             {
                 path: "/post/:id/delete",
