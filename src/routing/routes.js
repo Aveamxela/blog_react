@@ -5,6 +5,10 @@ import EditBlogPost from "../components/EditBlogPost";
 import DeleteBlogPost from "../components/DeleteBlogPost";
 import Layout from "../components/Layout";
 
+const postsSaved = JSON.parse(localStorage.getItem('PostInfosTest'));
+const posts = postsSaved.slice(0, 100);
+
+
 export const router = createBrowserRouter([
     {
         path: "/",
@@ -12,11 +16,11 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <HomePage />,
+                element: <HomePage savedPosts={posts} />,
             },
             {
                 path: "/post/:id",
-                element: <BlogPost />,
+                element: <BlogPost savedPosts={posts} />,
             },
             {
                 path: "/post/:id/edit",
