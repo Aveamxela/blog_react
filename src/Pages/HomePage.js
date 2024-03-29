@@ -40,7 +40,6 @@ function HomePage() {
                         <Link to={`post/${post.id}`}>{post.title}</Link>
                     </>
                 );
-                // return <BlogPost key={index} idPost={post.id} title={post.title} body={post.body} />
             })}
             <Button>est composantreact bootstrap</Button>
         </>
