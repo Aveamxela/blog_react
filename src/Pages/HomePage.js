@@ -42,7 +42,7 @@ function HomePage() {
                         <Col key={index} className="m-2">
                           <Post id={post.id} title={post.title}/>
                           <Link to={`post/${post.id}`}>
-                            <Button variant="primary">More info</Button>
+                            <Button variant="primary" className="mt-2">More info</Button>
                           </Link>
                         </Col>
                       </>
