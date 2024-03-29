@@ -1,10 +1,11 @@
 import {useState, useEffect } from 'react';
 import Button from "react-bootstrap/Button";
+import BlogPost from './BlogPost';
 // import { Link } from 'react-router-dom';
 
 const url = "https://jsonplaceholder.typicode.com/posts";
 
-function HomePage() {
+function HomePage({savedPosts}) {
   const [posts, setPosts] = useState("");
 
   useEffect(() => {
@@ -35,15 +36,13 @@ function HomePage() {
       // @HINT - once we got the data, it's maybe time to provoke a rerender...
   }, []);
   // pay attention on how to use carefully useEffect, don't hesitate to log !
-  console.log({posts});
+  console.log({savedPosts});
   return (
       <>
           <h1>Blog posts</h1>
-          {/* {posts.map((post) => (
-              <li key={post.id}>
-                  <Link to={`post/${post.id}`}>{post.title}</Link>
-              </li>
-          ))} */}
+          {savedPosts.map((post, index) => {
+            return <BlogPost key={index} idPost={post.id} title={post.title} body={post.body} />
+          })}
           <Button>est composantreact bootstrap</Button>
       </>
   );

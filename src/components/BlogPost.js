@@ -1,11 +1,15 @@
-// import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
-const BlogPost = () => {
-  // const {id} = useParams()
-  // console.log({id})
+const BlogPost = ({ idPost, title, body }) => {
+  const {id} = useParams();
+
   return (
       <>
-          {/* <h1>Test blog post{id}</h1> */}
+          <h1> Post {idPost} {id} </h1>
+          <li key={idPost}>
+              <Link to={`post/${idPost}`}>{title}</Link>
+          </li>
       </>
   );
 }
