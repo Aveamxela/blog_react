@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
-import Button from "react-bootstrap/Button";
+import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Link } from "react-router-dom";
+import Post from "../components/Post";
 
 const url = "https://jsonplaceholder.typicode.com/posts";
 
@@ -32,16 +33,23 @@ function HomePage() {
 
     return (
         <>
-            <h1>Blog posts</h1>
-            {posts.map((post, index) => {
-                return (
-                    <>
-                        <h1>Post {post.id}</h1>
-                        <Link to={`post/${post.id}`}>{post.title}</Link>
-                    </>
-                );
-            })}
-            <Button>est composantreact bootstrap</Button>
+          <Container>
+            <h1 className="mb-4">Blog Posts</h1>
+            <Row xs={1} md={2} lg={3} xl={4} className="g-4">
+              {posts.map((post, index) => {
+                  return (
+                      <>
+                        <Col key={index} className="m-2">
+                          <Post id={post.id} title={post.title}/>
+                          <Link to={`post/${post.id}`}>
+                            <Button variant="primary">More info</Button>
+                          </Link>
+                        </Col>
+                      </>
+                  );
+              })}
+              </Row>
+          </Container>
         </>
     );
 }
