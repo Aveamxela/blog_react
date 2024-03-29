@@ -3,7 +3,7 @@ const FetchPostId = async(id, method) => {
   const url = `https://jsonplaceholder.typicode.com/posts/${id}`
   try {
     const response = await fetch(url, {
-      method: {method},
+      method: method,
       headers: {
         'Content-Type': 'application/json'
       }
