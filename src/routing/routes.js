@@ -1,14 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import HomePage from "../Pages/HomePage";
-import BlogPost from "../Pages/BlogPost";
+import BlogPost from "../Pages/BlogPost"
 import EditBlogPost from "../Pages/EditBlogPost";
 import DeleteBlogPost from "../Pages/DeleteBlogPost";
 import Layout from "../components/Layout";
-
-// const postsSaved = JSON.parse(localStorage.getItem('PostInfosTest'));
-// const posts = postsSaved.slice(0, 100);
-
-// console.log({posts})
 
 export const router = createBrowserRouter([
     {
@@ -24,7 +19,7 @@ export const router = createBrowserRouter([
                 element: <BlogPost />,
             },
             {
-                path: "/post/:id/edit",
+                path: "post/:id/edit",
                 element: <EditBlogPost />,
             },
             {

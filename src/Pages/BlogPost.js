@@ -11,6 +11,23 @@ const BlogPost = () => {
         });
     }, [id]);
 
+    function save() {
+      FetchPostId(id, "DELETE").then((post) => {
+          setPost(post);
+      });
+  }
+
+    const handleClick = (e) => {
+      const confirmDelete = window.confirm(`You're about to delete post ${post.id}. Are you sure ?`);
+      if (confirmDelete) {
+        save();
+        console.log('Post deleted');
+      }
+    };
+
+    console.log(post);
+
+
     return (
         <>
         {/* Créer un composant post avec titre etc + style */}
@@ -20,6 +37,8 @@ const BlogPost = () => {
             <Link to={`/post/${post.id}/edit`}>
                 <button>Edit</button>
             </Link>
+            <button onClick={handleClick}>Delete</button>
+
         </>
     );
 };

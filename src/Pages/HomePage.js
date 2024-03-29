@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
-import BlogPost from "./BlogPost";
 import { Link } from "react-router-dom";
 
 const url = "https://jsonplaceholder.typicode.com/posts";
@@ -41,7 +40,6 @@ function HomePage() {
                         <Link to={`post/${post.id}`}>{post.title}</Link>
                     </>
                 );
-                // return <BlogPost key={index} idPost={post.id} title={post.title} body={post.body} />
             })}
             <Button>est composantreact bootstrap</Button>
         </>
